@@ -2,21 +2,22 @@
 title: API keys
 ---
 
-
 # API keys
-Gestión de API keys por medio de la API.
+Gestión de API keys por medio de la API para un proyecto específico.
 
 !!! warning
 
-    Esta documentación describe la `keys` API, si buscas información acerca de cómo crear una API key desde el dashboard lee [Uso de la API](/api/).
+    Esta documentación describe la `keys` API para proyectos. Si buscas información acerca de cómo crear una API key desde el dashboard lee [Uso de la API](/api/).
 
-## Todas las direciones
-* **Descripción**: Obtiene todas las API keys del usuario.
-* **Endpoint**: `/v1/keys`
-* **Método**: GET
+## Todas las API keys
+* **Descripción**: Obtiene todas las API keys de un proyecto.
+* **Endpoint**: `/v1/projects/{projectId}/keys`
+* **Método**: GET
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
+    * **Route params:**
+        * `projectId` (requerido): El proyecto a consultar
 * **Response:**
     * **Body:** (JSON)
         ```json
@@ -26,43 +27,48 @@ Gestión de API keys por medio de la API.
                 {
                     "id": 1,
                     "created_at": "2025-01-29T05:12:15+00:00",
-                    "label": "Some label",
-                    "key": "wavy_...",
+                    "label": "Alguna etiqueta",
+                    "key": "wavy_..."
                 }
             ]
         }
         ```
 
 ## Crear API key
-* **Descripción**: Crea una API key
-* **Endpoint**: `/v1/keys`
-* **Método**: POST
+* **Descripción**: Crea una API key para un proyecto
+* **Endpoint**: `/v1/projects/{projectId}/keys`
+* **Método**: POST
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
+    * **Route params:**
+        * `projectId` (requerido): El proyecto a consultar
     * **Body:** (JSON)
         ```json
         {
-            "label": "Some label"
+            "label": "Alguna etiqueta"
         }
         ```
 * **Response:**
-    ```json 
+    ```json
     {
         "success": true,
-        "data": 1 // key id
+        "data": 1
     }
     ```
 
 ## Eliminar una API key
-* **Descripción**: Elimina una API key
-* **Endpoint**: `/v1/keys/{keyId}`
-* **Método**: DELETE
+* **Descripción**: Elimina una API key de un proyecto
+* **Endpoint**: `/v1/projects/{projectId}/keys/{keyId}`
+* **Método**: DELETE
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
+    * **Route params:**
+        * `projectId` (requerido): El proyecto a consultar
+        * `keyId` (requerido): La key a eliminar
 * **Response:**
-    ```json 
+    ```json
     {
         "success": true
     }

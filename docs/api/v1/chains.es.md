@@ -1,13 +1,13 @@
 # Chains
-Presenta información acerca de las diferentes cadenas compatibles con Wavy Node.
+Presenta información acerca de las diferentes cadenas compatibles con Wavy Node.
 
 ## Todas las cadenas
-* **Descripción**: Obtiene todas las cadenas compatibles con Wavy Node. 
+* **Descripción**: Obtiene todas las cadenas compatibles con Wavy Node.
 * **Endpoint**: `/v1/chains`
-* **Método**: GET
+* **Método**: GET
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
 * **Response:**
     * **Body:** (JSON)
         ```json
@@ -27,12 +27,12 @@ Presenta información acerca de las diferentes cadenas compatibles con Wavy Nod
         ```
 
 ## Una cadena
-* **Descripción**: Obtiene información de una cadena en específico
+* **Descripción**: Obtiene información de una cadena en específico
 * **Endpoint**: `/v1/chains/{chainId}`
-* **Método**: GET
+* **Método**: GET
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
 * **Response:**
     * **Body:** (JSON)
         ```json

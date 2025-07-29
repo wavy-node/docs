@@ -1,15 +1,15 @@
 # Chains.
 Provides information about the different chains supported by Wavy Node.
 
-## All chains  
-* **Description**: Retrieves all the chains supported by Wavy Node.  
-* **Endpoint**: `/v1/chains`  
-* **Method**: GET  
-* **Request:**  
-    * **Query params:**  
-        * `apiKey` (required): Your API key  
-* **Response:**  
-    * **Body:** (JSON)  
+## All chains
+* **Description**: Retrieves all the chains supported by Wavy Node.
+* **Endpoint**: `/v1/chains`
+* **Method**: GET
+* **Request:**
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (required): Your API key
+* **Response:**
+    * **Body:** (JSON)
         ```json
         {
             "success": true,
@@ -26,15 +26,15 @@ Provides information about the different chains supported by Wavy Node.
         }
         ```
 
-## One chain  
-* **Description**: Retrieves information about a specific chain  
-* **Endpoint**: `/v1/chains/{chainId}`  
-* **Method**: GET  
-* **Request:**  
-    * **Query params:**  
-        * `apiKey` (required): Your API key  
-* **Response:**  
-    * **Body:** (JSON)  
+## One chain
+* **Description**: Retrieves information about a specific chain
+* **Endpoint**: `/v1/chains/{chainId}`
+* **Method**: GET
+* **Request:**
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (required): Your API key
+* **Response:**
+    * **Body:** (JSON)
         ```json
         {
             "success": true,

@@ -1,14 +1,17 @@
 # Uso de la API
 ## API key
-Para hacer uso correcto de la API se necesita crear una API key desde el [dashboard de WavyNode](https://wavynode.com/dashboard) y agregarlo a cada request que se haga por medio del parámetro `apiKey`.
+Para hacer uso correcto de la API se necesita crear una API key desde el [dashboard de WavyNode](https://wavynode.com/dashboard) y agregarla a cada request usando el header HTTP `x-api-header`:
 Por ejemplo:
 ```bash
-curl https://api.wavynode.com/v1/chains?apiKey={you-api-key}
+curl -H "x-api-header: ApiKey tu-api-key" https://api.wavynode.com/v1/chains
 ```
 
-## Hacer una petición
+> **Nota:** Algunas rutas de la API requieren que proporciones explícitamente el `projectId` en la URL. Puedes encontrar el `projectId` de tu proyecto en el dashboard de WavyNode, en la sección de configuración del proyecto ("Project Settings").
+
+
+## Hacer una petición
 * Endpoint base: `https://api.wavynode.com`
-* Autenticación: Parámetro `apiKey`
+* Autenticación: Header `x-api-header` (ver arriba)
 
 ### Formato de respuesta
 | Campo | Tipo | Opcional | 

@@ -1,16 +1,17 @@
 # Wallets
-La `wallets` API le permite a los desarrolladores obtener información acerca de wallets específicas, obtener su estado y balance.
+La `wallets` API le permite a los desarrolladores obtener información acerca de wallets específicas, obtener su estado y balance.
 
 ## Estado
-* **Descripción**: Obtiene el estado de una determinada `{wallet}`.
+* **Descripción**: Obtiene el estado de una determinada `{wallet}`.
 * **Endpoint**: `/v1/wallets/{wallet}/status`
-* **Método**: GET
+* **Método**: GET
 * **Request:**
     * **Route params:**
-        * `wallet` (requerido): La dirección EVM a consultar
+        * `wallet` (requerido): La dirección EVM a consultar
     * **Query params:**
         * `chainId` (requerido): La chain sobre la cual hacer la consulta.
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
 * **Response:**
     * **Body:** (JSON)
         ```json
@@ -28,14 +29,14 @@ La `wallets` API le permite a los desarrolladores obtener información acerca d
         ```
 
 ## Reporte
-* **Descripción**: Genera un reporte redactado acerca del estado de una determinada `{wallet}` usando IA.
+* **Descripción**: Genera un reporte redactado acerca del estado de una determinada `{wallet}` usando IA.
 * **Endpoint**: `/v1/wallets/{wallet}/report`
-* **Método**: GET
+* **Método**: GET
 * **Request:**
     * **Route params:**
-        * `wallet` (requerido): La dirección EVM a consultar
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+        * `wallet` (requerido): La dirección EVM a consultar
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
 * **Response:**
     * **Body:** (JSON)
         ```json
@@ -46,22 +47,23 @@ La `wallets` API le permite a los desarrolladores obtener información acerca d
         ```
 
 ## Balance
-* **Descripción**: Obtiene el balance total de la `{wallet}`.
+* **Descripción**: Obtiene el balance total de la `{wallet}`.
 * **Endpoint**: `/v1/wallets/{wallet}/balance`
-* **Método**: GET
+* **Método**: GET
 * **Request:**
     * **Route params:**
-        * `wallet` (requerido): La dirección EVM a consultar
+        * `wallet` (requerido): La dirección EVM a consultar
     * **Query params:**
         * `chainId` (requerido): La chain sobre la cual hacer la consulta.
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
 * **Response:**
     * **Body:** (JSON)
         ```json
         {
             "success": true,
             "data": {
-                "total_balance": 100, // in usd
+                "total_balance": 100, // en usd
                 "assets": []
             }
         }

@@ -1,17 +1,19 @@
-# Addresses
-Permite configurar las direcciones en cadena relevantes.
+# Direcciones
+Permite configurar las direcciones en cadena relevantes para un proyecto específico.
 
-!!! info 
+!!! info
 
-    Las direcciones relevantes son aquellas por las que se enviarán notificaciones de compliance con las legislaciones y alertas de interacciones con direcciones maliciosas al webhook configurado.
+    Las direcciones relevantes son aquellas por las que se enviarán notificaciones de compliance con las legislaciones y alertas de interacciones con direcciones maliciosas al webhook configurado.
 
-## Todas las direciones
-* **Descripción**: Obtiene todas las direcciones del usuario.
-* **Endpoint**: `/v1/addresses`
-* **Método**: GET
+## Todas las direcciones
+* **Descripción**: Obtiene todas las direcciones de un proyecto.
+* **Endpoint**: `/v1/projects/{projectId}/addresses`
+* **Método**: GET
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
+    * **Route params:**
+        * `projectId` (requerido): El proyecto a consultar
 * **Response:**
     * **Body:** (JSON)
         ```json
@@ -21,42 +23,47 @@ Permite configurar las direcciones en cadena relevantes.
                 {
                     "id": 1,
                     "address": "0x...",
-                    "description": "My first relevant address"
-                },
+                    "description": "Mi primera dirección relevante"
+                }
             ]
         }
         ```
 
-## Crear nueva dirección relevante
-* **Descripción**: Crea una nueva dirección relevante para la cual escuchar eventos.
-* **Endpoint**: `/v1/addresses`
-* **Método**: POST
+## Crear nueva dirección relevante
+* **Descripción**: Crea una nueva dirección relevante para escuchar eventos de un proyecto.
+* **Endpoint**: `/v1/projects/{projectId}/addresses`
+* **Método**: POST
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
+    * **Route params:**
+        * `projectId` (requerido): El proyecto a consultar
     * **Body:** (JSON)
         ```json
         {
-            "address": "0x<your-address>",
-            "description": "Some description here",
+            "address": "0x<tu-direccion>",
+            "description": "Alguna descripción aquí"
         }
         ```
 * **Response:**
-    ```json 
+    ```json
     {
         "success": true
     }
     ```
 
-## Eliminar una dirección
-* **Descripción**: Remueve una dirección relevante de la lista de direcciones relevantes del usuario.
-* **Endpoint**: `/v1/addresses/{addressId}`
-* **Método**: DELETE
+## Eliminar una dirección
+* **Descripción**: Remueve una dirección relevante de la lista de direcciones relevantes del proyecto.
+* **Endpoint**: `/v1/projects/{projectId}/addresses/{addressId}`
+* **Método**: DELETE
 * **Request:**
-    * **Query params:**
-        * `apiKey` (requerido): Tu API key
+    * **Headers:**
+        * `x-api-header: ApiKey <api-key>` (requerido): Tu API key
+    * **Route params:**
+        * `projectId` (requerido): El proyecto a consultar
+        * `addressId` (requerido): La dirección a eliminar
 * **Response:**
-    ```json 
+    ```json
     {
         "success": true
     }
