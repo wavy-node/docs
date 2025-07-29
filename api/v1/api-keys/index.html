@@ -479,9 +479,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todas-las-direciones" class="md-nav__link">
+  <a href="#todas-las-api-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Todas las direciones
+      Todas las API keys
     </span>
   </a>
   
@@ -598,9 +598,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todas-las-direciones" class="md-nav__link">
+  <a href="#todas-las-api-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Todas las direciones
+      Todas las API keys
     </span>
   </a>
   
@@ -643,19 +643,23 @@
 
 
 <h1 id="api-keys">API keys</h1>
-<p>Gestión de API keys por medio de la API.</p>
+<p>Gestión de API keys por medio de la API para un proyecto específico.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Esta documentación describe la <code>keys</code> API, si buscas información acerca de cómo crear una API key desde el dashboard lee <a href="/api/">Uso de la API</a>.</p>
+<p>Esta documentación describe la <code>keys</code> API para proyectos. Si buscas información acerca de cómo crear una API key desde el dashboard lee <a href="/api/">Uso de la API</a>.</p>
 </div>
-<h2 id="todas-las-direciones">Todas las direciones</h2>
+<h2 id="todas-las-api-keys">Todas las API keys</h2>
 <ul>
-<li><strong>Descripción</strong>: Obtiene todas las API keys del usuario.</li>
-<li><strong>Endpoint</strong>: <code>/v1/keys</code></li>
-<li><strong>Método</strong>: GET</li>
+<li><strong>Descripción</strong>: Obtiene todas las API keys de un proyecto.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/keys</code></li>
+<li><strong>Método</strong>: GET</li>
 <li><strong>Request:</strong><ul>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (requerido): El proyecto a consultar</li>
 </ul>
 </li>
 </ul>
@@ -668,8 +672,8 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">{</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-29T05:12:15+00:00&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some label&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wavy_...&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alguna etiqueta&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wavy_...&quot;</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">]</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
@@ -679,17 +683,21 @@
 </ul>
 <h2 id="crear-api-key">Crear API key</h2>
 <ul>
-<li><strong>Descripción</strong>: Crea una API key</li>
-<li><strong>Endpoint</strong>: <code>/v1/keys</code></li>
-<li><strong>Método</strong>: POST</li>
+<li><strong>Descripción</strong>: Crea una API key para un proyecto</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/keys</code></li>
+<li><strong>Método</strong>: POST</li>
 <li><strong>Request:</strong><ul>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (requerido): El proyecto a consultar</li>
 </ul>
 </li>
 <li><strong>Body:</strong> (JSON)
     <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some label&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alguna etiqueta&quot;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
@@ -697,18 +705,23 @@
 <li><strong>Response:</strong>
     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// key id</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <h2 id="eliminar-una-api-key">Eliminar una API key</h2>
 <ul>
-<li><strong>Descripción</strong>: Elimina una API key</li>
-<li><strong>Endpoint</strong>: <code>/v1/keys/{keyId}</code></li>
-<li><strong>Método</strong>: DELETE</li>
+<li><strong>Descripción</strong>: Elimina una API key de un proyecto</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/keys/{keyId}</code></li>
+<li><strong>Método</strong>: DELETE</li>
 <li><strong>Request:</strong><ul>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (requerido): El proyecto a consultar</li>
+<li><code>keyId</code> (requerido): La key a eliminar</li>
 </ul>
 </li>
 </ul>

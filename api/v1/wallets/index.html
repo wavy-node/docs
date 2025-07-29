@@ -641,20 +641,23 @@
 
 
 <h1 id="wallets">Wallets</h1>
-<p>La <code>wallets</code> API le permite a los desarrolladores obtener información acerca de wallets específicas, obtener su estado y balance.</p>
+<p>La <code>wallets</code> API le permite a los desarrolladores obtener información acerca de wallets específicas, obtener su estado y balance.</p>
 <h2 id="estado">Estado</h2>
 <ul>
-<li><strong>Descripción</strong>: Obtiene el estado de una determinada <code>{wallet}</code>.</li>
+<li><strong>Descripción</strong>: Obtiene el estado de una determinada <code>{wallet}</code>.</li>
 <li><strong>Endpoint</strong>: <code>/v1/wallets/{wallet}/status</code></li>
-<li><strong>Método</strong>: GET</li>
+<li><strong>Método</strong>: GET</li>
 <li><strong>Request:</strong><ul>
 <li><strong>Route params:</strong><ul>
-<li><code>wallet</code> (requerido): La dirección EVM a consultar</li>
+<li><code>wallet</code> (requerido): La dirección EVM a consultar</li>
 </ul>
 </li>
 <li><strong>Query params:</strong><ul>
 <li><code>chainId</code> (requerido): La chain sobre la cual hacer la consulta.</li>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
 </ul>
 </li>
 </ul>
@@ -678,16 +681,16 @@
 </ul>
 <h2 id="reporte">Reporte</h2>
 <ul>
-<li><strong>Descripción</strong>: Genera un reporte redactado acerca del estado de una determinada <code>{wallet}</code> usando IA.</li>
+<li><strong>Descripción</strong>: Genera un reporte redactado acerca del estado de una determinada <code>{wallet}</code> usando IA.</li>
 <li><strong>Endpoint</strong>: <code>/v1/wallets/{wallet}/report</code></li>
-<li><strong>Método</strong>: GET</li>
+<li><strong>Método</strong>: GET</li>
 <li><strong>Request:</strong><ul>
 <li><strong>Route params:</strong><ul>
-<li><code>wallet</code> (requerido): La dirección EVM a consultar</li>
+<li><code>wallet</code> (requerido): La dirección EVM a consultar</li>
 </ul>
 </li>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
 </ul>
 </li>
 </ul>
@@ -704,17 +707,20 @@
 </ul>
 <h2 id="balance">Balance</h2>
 <ul>
-<li><strong>Descripción</strong>: Obtiene el balance total de la <code>{wallet}</code>.</li>
+<li><strong>Descripción</strong>: Obtiene el balance total de la <code>{wallet}</code>.</li>
 <li><strong>Endpoint</strong>: <code>/v1/wallets/{wallet}/balance</code></li>
-<li><strong>Método</strong>: GET</li>
+<li><strong>Método</strong>: GET</li>
 <li><strong>Request:</strong><ul>
 <li><strong>Route params:</strong><ul>
-<li><code>wallet</code> (requerido): La dirección EVM a consultar</li>
+<li><code>wallet</code> (requerido): La dirección EVM a consultar</li>
 </ul>
 </li>
 <li><strong>Query params:</strong><ul>
 <li><code>chainId</code> (requerido): La chain sobre la cual hacer la consulta.</li>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
 </ul>
 </li>
 </ul>
@@ -724,7 +730,7 @@
     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">&quot;total_balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// in usd</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">&quot;total_balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// en usd</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">&quot;assets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>

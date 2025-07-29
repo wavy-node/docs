@@ -419,9 +419,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#formato-de-respuesta" class="md-nav__link">
+  <a href="#response-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Formato de respuesta
+      Response format
     </span>
   </a>
   
@@ -621,9 +621,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#formato-de-respuesta" class="md-nav__link">
+  <a href="#response-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Formato de respuesta
+      Response format
     </span>
   </a>
   
@@ -654,22 +654,24 @@
 
 <h1 id="api-usage">API Usage</h1>
 <h2 id="api-key">API Key</h2>
-<p>To properly use the API, you need to create an API key from the <a href="https://wavynode.com/dashboard">WavyNode dashboard</a> and include it in every request using the <code>apiKey</code> parameter.</p>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>https://api.wavynode.com/v1/chains?apiKey<span class="o">={</span>you-api-key<span class="o">}</span>
+<p>To properly use the API, you need to create an API key from the <a href="https://wavynode.com/dashboard">WavyNode dashboard</a> and include it in every request using the <code>x-api-header</code> HTTP header:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;x-api-header: ApiKey your-api-key&quot;</span><span class="w"> </span>https://api.wavynode.com/v1/chains
 </code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> Some API routes require you to explicitly provide the <code>projectId</code> in the URL. You can find your project's <code>projectId</code> in the WavyNode dashboard, under the project settings section ("Project Settings").</p>
+</blockquote>
 <h2 id="make-a-request">Make a request</h2>
 <ul>
 <li>Endpoint base: <code>https://api.wavynode.com</code></li>
-<li>Authentication: <code>apiKey</code> parameter</li>
+<li>Authentication: <code>x-api-header</code> header (see above)</li>
 </ul>
-<h3 id="formato-de-respuesta">Formato de respuesta</h3>
+<h3 id="response-format">Response format</h3>
 <table>
 <thead>
 <tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Opcional</th>
+<th>Field</th>
+<th>Type</th>
+<th>Optional</th>
 </tr>
 </thead>
 <tbody>

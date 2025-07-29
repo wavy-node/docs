@@ -411,11 +411,11 @@
         <li class="md-nav__item">
   <a href="#hacer-una-peticion" class="md-nav__link">
     <span class="md-ellipsis">
-      Hacer una petición
+      Hacer una petición
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Hacer una petición">
+    <nav class="md-nav" aria-label="Hacer una petición">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -613,11 +613,11 @@
         <li class="md-nav__item">
   <a href="#hacer-una-peticion" class="md-nav__link">
     <span class="md-ellipsis">
-      Hacer una petición
+      Hacer una petición
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Hacer una petición">
+    <nav class="md-nav" aria-label="Hacer una petición">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -654,14 +654,17 @@
 
 <h1 id="uso-de-la-api">Uso de la API</h1>
 <h2 id="api-key">API key</h2>
-<p>Para hacer uso correcto de la API se necesita crear una API key desde el <a href="https://wavynode.com/dashboard">dashboard de WavyNode</a> y agregarlo a cada request que se haga por medio del parámetro <code>apiKey</code>.
+<p>Para hacer uso correcto de la API se necesita crear una API key desde el <a href="https://wavynode.com/dashboard">dashboard de WavyNode</a> y agregarla a cada request usando el header HTTP <code>x-api-header</code>:
 Por ejemplo:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>https://api.wavynode.com/v1/chains?apiKey<span class="o">={</span>you-api-key<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;x-api-header: ApiKey tu-api-key&quot;</span><span class="w"> </span>https://api.wavynode.com/v1/chains
 </code></pre></div></p>
-<h2 id="hacer-una-peticion">Hacer una petición</h2>
+<blockquote>
+<p><strong>Nota:</strong> Algunas rutas de la API requieren que proporciones explícitamente el <code>projectId</code> en la URL. Puedes encontrar el <code>projectId</code> de tu proyecto en el dashboard de WavyNode, en la sección de configuración del proyecto ("Project Settings").</p>
+</blockquote>
+<h2 id="hacer-una-peticion">Hacer una petición</h2>
 <ul>
 <li>Endpoint base: <code>https://api.wavynode.com</code></li>
-<li>Autenticación: Parámetro <code>apiKey</code></li>
+<li>Autenticación: Header <code>x-api-header</code> (ver arriba)</li>
 </ul>
 <h3 id="formato-de-respuesta">Formato de respuesta</h3>
 <table>

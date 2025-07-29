@@ -643,25 +643,29 @@
 
 
 <h1 id="addresses">Addresses</h1>
-<p>Allows you to configure relevant on-chain addresses.</p>
+<p>Allows you to configure relevant on-chain addresses for a specific project.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Relevant addresses are those for which compliance notifications and alerts about interactions with malicious addresses will be sent to the configured webhook.</p>
 </div>
 <h2 id="all-addresses">All addresses</h2>
 <ul>
-<li><strong>Description</strong>: Retrieves all the user's addresses.  </li>
-<li><strong>Endpoint</strong>: <code>/v1/addresses</code>  </li>
-<li><strong>Method</strong>: GET  </li>
-<li><strong>Request:</strong>  <ul>
-<li><strong>Query params:</strong>  <ul>
-<li><code>apiKey</code> (required): Your API key  </li>
+<li><strong>Description</strong>: Retrieves all the addresses for a given project.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/addresses</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Request:</strong><ul>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (required): Your API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (required): The project to query</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>Response:</strong>  <ul>
-<li><strong>Body:</strong> (JSON)<br />
+<li><strong>Response:</strong><ul>
+<li><strong>Body:</strong> (JSON)
     <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -678,15 +682,19 @@
 </ul>
 <h2 id="create-new-relevant-address">Create new relevant address</h2>
 <ul>
-<li><strong>Description</strong>: Creates a new relevant address to listen for events.  </li>
-<li><strong>Endpoint</strong>: <code>/v1/addresses</code>  </li>
-<li><strong>Method</strong>: POST  </li>
-<li><strong>Request:</strong>  <ul>
-<li><strong>Query params:</strong>  <ul>
-<li><code>apiKey</code> (required): Your API key  </li>
+<li><strong>Description</strong>: Creates a new relevant address to listen for events for a given project.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/addresses</code></li>
+<li><strong>Method</strong>: POST</li>
+<li><strong>Request:</strong><ul>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (required): Your API key</li>
 </ul>
 </li>
-<li><strong>Body:</strong> (JSON)<br />
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (required): The project to query</li>
+</ul>
+</li>
+<li><strong>Body:</strong> (JSON)
     <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x&lt;your-address&gt;&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some description here&quot;</span>
@@ -694,7 +702,7 @@
 </code></pre></div></li>
 </ul>
 </li>
-<li><strong>Response:</strong><br />
+<li><strong>Response:</strong>
     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
@@ -702,17 +710,22 @@
 </ul>
 <h2 id="delete-an-address">Delete an address</h2>
 <ul>
-<li><strong>Description</strong>: Removes a relevant address from the user's relevant address list.  </li>
-<li><strong>Endpoint</strong>: <code>/v1/addresses/{addressId}</code>  </li>
-<li><strong>Method</strong>: DELETE  </li>
-<li><strong>Request:</strong>  <ul>
-<li><strong>Query params:</strong>  <ul>
-<li><code>apiKey</code> (required): Your API key  </li>
+<li><strong>Description</strong>: Removes a relevant address from the project's relevant address list.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/addresses/{addressId}</code></li>
+<li><strong>Method</strong>: DELETE</li>
+<li><strong>Request:</strong><ul>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (required): Your API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (required): The project to query</li>
+<li><code>addressId</code> (required): The address to delete</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>Response:</strong><br />
+<li><strong>Response:</strong>
     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>

@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#addresses" class="md-skip">
+        <a href="#direcciones" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -458,9 +458,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todas-las-direciones" class="md-nav__link">
+  <a href="#todas-las-direcciones" class="md-nav__link">
     <span class="md-ellipsis">
-      Todas las direciones
+      Todas las direcciones
     </span>
   </a>
   
@@ -469,7 +469,7 @@
         <li class="md-nav__item">
   <a href="#crear-nueva-direccion-relevante" class="md-nav__link">
     <span class="md-ellipsis">
-      Crear nueva dirección relevante
+      Crear nueva dirección relevante
     </span>
   </a>
   
@@ -478,7 +478,7 @@
         <li class="md-nav__item">
   <a href="#eliminar-una-direccion" class="md-nav__link">
     <span class="md-ellipsis">
-      Eliminar una dirección
+      Eliminar una dirección
     </span>
   </a>
   
@@ -598,9 +598,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todas-las-direciones" class="md-nav__link">
+  <a href="#todas-las-direcciones" class="md-nav__link">
     <span class="md-ellipsis">
-      Todas las direciones
+      Todas las direcciones
     </span>
   </a>
   
@@ -609,7 +609,7 @@
         <li class="md-nav__item">
   <a href="#crear-nueva-direccion-relevante" class="md-nav__link">
     <span class="md-ellipsis">
-      Crear nueva dirección relevante
+      Crear nueva dirección relevante
     </span>
   </a>
   
@@ -618,7 +618,7 @@
         <li class="md-nav__item">
   <a href="#eliminar-una-direccion" class="md-nav__link">
     <span class="md-ellipsis">
-      Eliminar una dirección
+      Eliminar una dirección
     </span>
   </a>
   
@@ -642,20 +642,24 @@
   
 
 
-<h1 id="addresses">Addresses</h1>
-<p>Permite configurar las direcciones en cadena relevantes.</p>
+<h1 id="direcciones">Direcciones</h1>
+<p>Permite configurar las direcciones en cadena relevantes para un proyecto específico.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Las direcciones relevantes son aquellas por las que se enviarán notificaciones de compliance con las legislaciones y alertas de interacciones con direcciones maliciosas al webhook configurado.</p>
+<p>Las direcciones relevantes son aquellas por las que se enviarán notificaciones de compliance con las legislaciones y alertas de interacciones con direcciones maliciosas al webhook configurado.</p>
 </div>
-<h2 id="todas-las-direciones">Todas las direciones</h2>
+<h2 id="todas-las-direcciones">Todas las direcciones</h2>
 <ul>
-<li><strong>Descripción</strong>: Obtiene todas las direcciones del usuario.</li>
-<li><strong>Endpoint</strong>: <code>/v1/addresses</code></li>
-<li><strong>Método</strong>: GET</li>
+<li><strong>Descripción</strong>: Obtiene todas las direcciones de un proyecto.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/addresses</code></li>
+<li><strong>Método</strong>: GET</li>
 <li><strong>Request:</strong><ul>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (requerido): El proyecto a consultar</li>
 </ul>
 </li>
 </ul>
@@ -668,28 +672,32 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">{</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My first relevant address&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mi primera dirección relevante&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">]</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 </li>
 </ul>
-<h2 id="crear-nueva-direccion-relevante">Crear nueva dirección relevante</h2>
+<h2 id="crear-nueva-direccion-relevante">Crear nueva dirección relevante</h2>
 <ul>
-<li><strong>Descripción</strong>: Crea una nueva dirección relevante para la cual escuchar eventos.</li>
-<li><strong>Endpoint</strong>: <code>/v1/addresses</code></li>
-<li><strong>Método</strong>: POST</li>
+<li><strong>Descripción</strong>: Crea una nueva dirección relevante para escuchar eventos de un proyecto.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/addresses</code></li>
+<li><strong>Método</strong>: POST</li>
 <li><strong>Request:</strong><ul>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (requerido): El proyecto a consultar</li>
 </ul>
 </li>
 <li><strong>Body:</strong> (JSON)
     <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x&lt;your-address&gt;&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some description here&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x&lt;tu-direccion&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alguna descripción aquí&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
@@ -700,14 +708,19 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
-<h2 id="eliminar-una-direccion">Eliminar una dirección</h2>
+<h2 id="eliminar-una-direccion">Eliminar una dirección</h2>
 <ul>
-<li><strong>Descripción</strong>: Remueve una dirección relevante de la lista de direcciones relevantes del usuario.</li>
-<li><strong>Endpoint</strong>: <code>/v1/addresses/{addressId}</code></li>
-<li><strong>Método</strong>: DELETE</li>
+<li><strong>Descripción</strong>: Remueve una dirección relevante de la lista de direcciones relevantes del proyecto.</li>
+<li><strong>Endpoint</strong>: <code>/v1/projects/{projectId}/addresses/{addressId}</code></li>
+<li><strong>Método</strong>: DELETE</li>
 <li><strong>Request:</strong><ul>
-<li><strong>Query params:</strong><ul>
-<li><code>apiKey</code> (requerido): Tu API key</li>
+<li><strong>Headers:</strong><ul>
+<li><code>x-api-header: ApiKey &lt;api-key&gt;</code> (requerido): Tu API key</li>
+</ul>
+</li>
+<li><strong>Route params:</strong><ul>
+<li><code>projectId</code> (requerido): El proyecto a consultar</li>
+<li><code>addressId</code> (requerido): La dirección a eliminar</li>
 </ul>
 </li>
 </ul>
