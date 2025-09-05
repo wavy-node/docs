@@ -106,15 +106,25 @@ This endpoint is used by WavyNode to retrieve information about a specific user.
 
 Your endpoint should return a JSON object with the following properties:
 
-*   `name`: The user's name.
-*   `rfc`: The user's RFC.
+*   `givenName`: The individual's given name(s). This can include multiple names, such as "Maria Guadalupe".
+*   `maternalSurname`: The individual's maternal surname, which is the last name from their mother's side.
+*   `paternalSurname`: The individual's paternal surname, which is the last name from their father's side.
+*   `birthdate`: Date of birth in 'YYYY-MM-DD' format (ISO 8601).
+*   `nationality`: ISO 3166-1 alpha-2 country code.
+*   `rfc`: (Optional) Mexican RFC (Registro Federal de Contribuyentes).
+*   `curp`: (Optional) Mexican CURP (Clave Única de Registro de Población).
 
 Here is an example of a valid response:
 
 ```json
 {
-    "name": "Julio César Chávez",
-    "rfc": "CHCJ990712ABC"
+    "givenName": "Maria Guadalupe",
+    "maternalSurname": "Lopez",
+    "paternalSurname": "Perez",
+    "birthdate": "1990-01-15",
+    "nationality": "MX",
+    "rfc": "LOPM900115ABC",
+    "curp": "LOPM900115MDFABC12"
 }
 ```
 
@@ -191,7 +201,7 @@ Here is an example of a valid notification payload:
                 "source": "Source of the law",
                 "risk": "warn",
                 "country": "mexico",
-                "countryCode": "MEX"
+                "countryCode": "MX"
             }
         ]
     }
