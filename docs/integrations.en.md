@@ -73,29 +73,13 @@ If you are not using the `@wavynode/utils` package, you can implement the authen
 1.  **Create the canonical string:** The canonical string is a concatenation of the following, separated by `::`:
     *   The uppercase HTTP method (`GET`, `POST`, etc.).
     *   The lowercase request path (e.g., `/webhook`).
-    *   The stringified request body with its keys sorted alphabetically.
+    *   The stringified request body with its keys sorted **alphabetically**, or an empty object `{}` if no body is provided in the request.
     *   The timestamp from the `x-wavynode-timestamp` header.
 
-    Here is an example of how to create the canonical string in JavaScript:
+    Here is an example of a valid canonical string: 
 
-    ```javascript
-    const sortObjectAlphabetically = (obj) => {
-        const sortedKeys = Object.keys(obj).sort();
-        const sortedObject = {};
-        for (const key of sortedKeys) {
-            if (typeof obj[key] === 'object' && obj[key] != null && !Array.isArray(obj[key])) {
-                sortedObject[key] = sortObjectAlphabetically(obj[key]);
-                continue;
-            }
-            sortedObject[key] = obj[key];
-        }
-        return sortedObject;
-    };
-
-    const formCanonicalMessage = ({ method, path, body, timestamp }) => {
-        const sortedBody = sortObjectAlphabetically(body);
-        return `${method.toUpperCase()}::${path.toLowerCase()}::${JSON.stringify(sortedBody)}::${timestamp}`;
-    };
+    ```
+    GET::/users/123::{}::1757050233763
     ```
 
 2.  **Create the HMAC signature:** The signature is a `sha256` HMAC of the canonical string, using your integration's secret as the key. The result should be base64 encoded.
