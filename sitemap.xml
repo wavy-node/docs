@@ -2,98 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://wavynode.com/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/"/>
     </url>
     <url>
+        <loc>https://wavynode.com/integrations/</loc>
+        <lastmod>2025-09-17</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/integrations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/integrations/"/>
+    </url>
+    <url>
         <loc>https://wavynode.com/notifications/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/notifications/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/notifications/"/>
     </url>
     <url>
         <loc>https://wavynode.com/api/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/"/>
     </url>
     <url>
         <loc>https://wavynode.com/api/v1/addresses/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/addresses/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/addresses/"/>
     </url>
     <url>
         <loc>https://wavynode.com/api/v1/api-keys/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/api-keys/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/api-keys/"/>
     </url>
     <url>
         <loc>https://wavynode.com/api/v1/chains/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/chains/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/chains/"/>
     </url>
     <url>
         <loc>https://wavynode.com/api/v1/wallets/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/wallets/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/wallets/"/>
     </url>
     <url>
         <loc>https://wavynode.com/en/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/"/>
     </url>
     <url>
+        <loc>https://wavynode.com/en/integrations/</loc>
+        <lastmod>2025-09-17</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/integrations/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/integrations/"/>
+    </url>
+    <url>
         <loc>https://wavynode.com/en/notifications/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/notifications/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/notifications/"/>
     </url>
     <url>
         <loc>https://wavynode.com/en/api/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/"/>
     </url>
     <url>
         <loc>https://wavynode.com/en/api/v1/addresses/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/addresses/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/addresses/"/>
     </url>
     <url>
         <loc>https://wavynode.com/en/api/v1/api-keys/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/api-keys/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/api-keys/"/>
     </url>
     <url>
         <loc>https://wavynode.com/en/api/v1/chains/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/chains/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/chains/"/>
     </url>
     <url>
         <loc>https://wavynode.com/en/api/v1/wallets/</loc>
-        <lastmod>2025-07-29</lastmod>
+        <lastmod>2025-09-17</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wavynode.com/en/api/v1/wallets/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://wavynode.com/api/v1/wallets/"/>
