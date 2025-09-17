@@ -31,6 +31,7 @@ plugins:
           nav:
             - Inicio: index.es.md
             - Notificaciones: notifications.es.md
+            - Integraciones: integrations.es.md
             - API:
                 - Uso de la API: api/index.es.md
                 - V1:
@@ -44,6 +45,7 @@ plugins:
           nav:
             - Home: index.en.md
             - Notifications: notifications.en.md
+            - Integrations: integrations.en.md
             - API:
                 - Getting Started: api/index.en.md
                 - V1:
