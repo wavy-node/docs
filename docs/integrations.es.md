@@ -106,25 +106,51 @@ Este endpoint es utilizado por WavyNode para recuperar información sobre un usu
 
 Tu endpoint debe devolver un objeto JSON con las siguientes propiedades:
 
-*   `givenName`: El nombre(s) de pila de la persona. Esto puede incluir múltiples nombres, como "Maria Guadalupe".
-*   `maternalSurname`: El apellido materno de la persona, que es el apellido del lado de su madre.
-*   `paternalSurname`: El apellido paterno de la persona, que es el apellido del lado de su padre.
+*   `givenName`: El nombre(s) de pila de la persona.
+*   `maternalSurname`: El apellido materno de la persona.
+*   `paternalSurname`: El apellido paterno de la persona.
 *   `birthdate`: Fecha de nacimiento en formato 'YYYY-MM-DD' (ISO 8601).
 *   `nationality`: Código de país ISO 3166-1 alfa-2.
-*   `rfc`: (Opcional) RFC (Registro Federal de Contribuyentes) mexicano.
-*   `curp`: (Opcional) CURP (Clave Única de Registro de Población) mexicana.
+*   `phoneNumber`: Un objeto que contiene el número de teléfono del usuario.
+*   `email`: La dirección de correo electrónico del usuario.
+*   `address`: Un objeto que contiene la dirección física del usuario.
+*   `mexico`: (Opcional) Un objeto con campos requeridos para los reportes de legislación mexicana. Solo es necesario si tienes activada la conformidad con la legislación mexicana en tu panel de control.
 
 Aquí hay un ejemplo de una respuesta válida:
 
 ```json
 {
-    "givenName": "Maria Guadalupe",
-    "maternalSurname": "Lopez",
-    "paternalSurname": "Perez",
-    "birthdate": "1990-01-15",
-    "nationality": "MX",
-    "rfc": "LOPM900115ABC",
-    "curp": "LOPM900115MDFABC12"
+  "givenName": "Maria Guadalupe",
+  "maternalSurname": "Sánchez",
+  "paternalSurname": "Rodríguez",
+  "birthdate": "1992-05-15",
+  "nationality": "MX",
+  "phoneNumber": {
+    "countryCode": "+52",
+    "phoneNumber": 5512345678
+  },
+  "email": "maria.guadalupe@example.com",
+  "address": {
+    "country": "MX",
+    "region": "CDMX",
+    "city": "Ciudad de México",
+    "street": "Avenida Insurgentes Sur",
+    "colonia": "Condesa",
+    "exteriorNumber": "123",
+    "interiorNumber": "4B",
+    "postalCode": "06100"
+  },
+  "mexico": {
+    "rfc": "ROSM920515XXX",
+    "curp": "ROSM920515MDFRXXXX",
+    "actividadEconomica": 612012,
+    "cuentaRelacionada": "1234567890",
+    "monedaCuentaRelacionada": 1,
+    "documentoIdentificacion": {
+      "tipoIdentificacion": 1,
+      "numeroIdentificacion": "IDMEX12345678"
+    }
+  }
 }
 ```
 
@@ -144,7 +170,8 @@ Si el `type` es `notification`, el objeto `data` contendrá las siguientes propi
 *   `chainId`: El ID de la cadena donde ocurrió la transacción.
 *   `address`: Un objeto que contiene información sobre la dirección involucrada en la transacción.
     *   `id`: El ID de la dirección.
-    *   `address`: La dirección.
+    *   `userId`: El ID del usuario en tu sistema que es dueño de esta dirección.
+    *   `address`: La dirección de la billetera.
     *   `description`: La descripción de la dirección.
 *   `txHash`: El hash de la transacción.
 *   `timestamp`: La marca de tiempo de la transacción.
@@ -179,6 +206,7 @@ Aquí hay un ejemplo de un payload de notificación válido:
         "chainId": 42161,
         "address": {
             "id": 543,
+            "userId": "user-in-your-db-123",
             "address": "0xyour-address-involved",
             "description": "Your address' description"
         },

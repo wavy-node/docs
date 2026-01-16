@@ -30,7 +30,6 @@ plugins:
           build: true
           nav:
             - Inicio: index.es.md
-            - Notificaciones: notifications.es.md
             - Integraciones: integrations.es.md
             - Reportes MX: mexican-reports.es.md
             - API:
@@ -45,7 +44,6 @@ plugins:
           build: true
           nav:
             - Home: index.en.md
-            - Notifications: notifications.en.md
             - Integrations: integrations.en.md
             - MX Reports: mexican-reports.en.md
             - API:

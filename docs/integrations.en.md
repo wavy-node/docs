@@ -106,25 +106,51 @@ This endpoint is used by WavyNode to retrieve information about a specific user.
 
 Your endpoint should return a JSON object with the following properties:
 
-*   `givenName`: The individual's given name(s). This can include multiple names, such as "Maria Guadalupe".
-*   `maternalSurname`: The individual's maternal surname, which is the last name from their mother's side.
-*   `paternalSurname`: The individual's paternal surname, which is the last name from their father's side.
+*   `givenName`: The individual's given name(s).
+*   `maternalSurname`: The individual's maternal surname.
+*   `paternalSurname`: The individual's paternal surname.
 *   `birthdate`: Date of birth in 'YYYY-MM-DD' format (ISO 8601).
 *   `nationality`: ISO 3166-1 alpha-2 country code.
-*   `rfc`: (Optional) Mexican RFC (Registro Federal de Contribuyentes).
-*   `curp`: (Optional) Mexican CURP (Clave Única de Registro de Población).
+*   `phoneNumber`: An object containing the user's phone number.
+*   `email`: The user's email address.
+*   `address`: An object containing the user's physical address.
+*   `mexico`: (Optional) An object with fields required for Mexican legislation reports. This is only needed if you have Mexican compliance enabled in your dashboard.
 
 Here is an example of a valid response:
 
 ```json
 {
-    "givenName": "Maria Guadalupe",
-    "maternalSurname": "Lopez",
-    "paternalSurname": "Perez",
-    "birthdate": "1990-01-15",
-    "nationality": "MX",
-    "rfc": "LOPM900115ABC",
-    "curp": "LOPM900115MDFABC12"
+  "givenName": "Maria Guadalupe",
+  "maternalSurname": "Sánchez",
+  "paternalSurname": "Rodríguez",
+  "birthdate": "1992-05-15",
+  "nationality": "MX",
+  "phoneNumber": {
+    "countryCode": "+52",
+    "phoneNumber": 5512345678
+  },
+  "email": "maria.guadalupe@example.com",
+  "address": {
+    "country": "MX",
+    "region": "CDMX",
+    "city": "Ciudad de México",
+    "street": "Avenida Insurgentes Sur",
+    "colonia": "Condesa",
+    "exteriorNumber": "123",
+    "interiorNumber": "4B",
+    "postalCode": "06100"
+  },
+  "mexico": {
+    "rfc": "ROSM920515XXX",
+    "curp": "ROSM920515MDFRXXXX",
+    "actividadEconomica": 612012,
+    "cuentaRelacionada": "1234567890",
+    "monedaCuentaRelacionada": 1,
+    "documentoIdentificacion": {
+      "tipoIdentificacion": 1,
+      "numeroIdentificacion": "IDMEX12345678"
+    }
+  }
 }
 ```
 
@@ -144,7 +170,8 @@ If the `type` is `notification`, the `data` object will contain the following pr
 *   `chainId`: The ID of the chain where the transaction occurred.
 *   `address`: An object containing information about the address involved in the transaction.
     *   `id`: The address' ID.
-    *   `address`: The address.
+    *   `userId`: The ID of the user in your system who owns this address.
+    *   `address`: The wallet address.
     *   `description`: The address' description.
 *   `txHash`: The transaction hash.
 *   `timestamp`: The timestamp of the transaction.
@@ -179,6 +206,7 @@ Here is an example of a valid notification payload:
         "chainId": 42161,
         "address": {
             "id": 543,
+            "userId": "user-in-your-db-123",
             "address": "0xyour-address-involved",
             "description": "Your address' description"
         },
