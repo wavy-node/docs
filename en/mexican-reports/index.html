@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Understand the automated compliance reports for Mexican financial authorities.">
       
       
-        <link rel="canonical" href="https://wavynode.com/en/notifications/">
+      
+        <link rel="canonical" href="https://wavynode.com/en/mexican-reports/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../integrations/">
       
       
-        <link rel="next" href="../integrations/">
+        <link rel="next" href="../api/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Notifications - Wavy Node</title>
+        <title>Mexican Compliance Reports - Wavy Node</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notifications" class="md-skip">
+        <a href="#mexican-compliance-reports" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notifications
+              Mexican Compliance Reports
             
           </span>
         </div>
@@ -156,7 +158,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../notifications/" hreflang="es" class="md-select__link">
+            <a href="../../mexican-reports/" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -294,6 +296,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -310,7 +332,7 @@
           
   
   <span class="md-ellipsis">
-    Notifications
+    MX Reports
   </span>
   
 
@@ -321,7 +343,7 @@
         
   
   <span class="md-ellipsis">
-    Notifications
+    MX Reports
   </span>
   
 
@@ -343,45 +365,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quickstart" class="md-nav__link">
+  <a href="#what-to-expect" class="md-nav__link">
     <span class="md-ellipsis">
-      Quickstart
+      What to Expect
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
+  <a href="#your-responsibilities" class="md-nav__link">
     <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sequence-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sequence Diagram
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#payload" class="md-nav__link">
-    <span class="md-ellipsis">
-      Payload
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-structures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Structures
+      Your Responsibilities
     </span>
   </a>
   
@@ -391,26 +386,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integrations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Integrations
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -632,45 +607,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quickstart" class="md-nav__link">
+  <a href="#what-to-expect" class="md-nav__link">
     <span class="md-ellipsis">
-      Quickstart
+      What to Expect
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
+  <a href="#your-responsibilities" class="md-nav__link">
     <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sequence-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sequence Diagram
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#payload" class="md-nav__link">
-    <span class="md-ellipsis">
-      Payload
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-structures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Structures
+      Your Responsibilities
     </span>
   </a>
   
@@ -694,71 +642,35 @@
   
 
 
-<h1 id="notifications">Notifications</h1>
-<p>Wavy Node lets you receive alerts about irregular activity or regulatory violations through webhooks.</p>
-<h2 id="quickstart">Quickstart</h2>
-<ol>
-<li>Set your webhook URL in the <a href="https://wavynode.com/dashboard">Wavy Node dashboard</a>.</li>
-<li>Add your relevant addresses using the dashboard or <a href="/en/api/v1/addresses">the API</a>.</li>
-<li>Create a web server that listens for notifications at that URL.</li>
-<li>Respond with a <code>200</code> status code to confirm the notification was successfully received.</li>
-</ol>
-<h2 id="security">Security</h2>
-<p>To ensure the authenticity and integrity of notifications sent by Wavy Node, we utilize HMAC (Hash-based Message Authentication Code). This method allows you to verify that each notification genuinely originates from our service and has not been tampered with during transmission. It works by combining a secret key (known only by Wavy Node and you, and created when you set up a webhook in our dashboard) with the notification message. This combination is then processed through a cryptographic hash function to generate a unique signature.</p>
-<p>When you receive a notification from Wavy Node, it will include the HMAC signature in a header. Your server can then use the same secret key and hash function to calculate its own signature from the received message. If both signatures match, you can be confident that the notification is from Wavy Node and that its contents are unaltered. This safeguards against impersonation and data manipulation.</p>
-<p>We use the <code>txHash</code> as the message to be signed; this can be found in the notification payload (body). The signature itself will be in the <code>x-wavynode-hmac</code> header.</p>
-<p>Here's an example of the hashing function for Node.js:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createHmac</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:crypto&#39;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">createHmacSignature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">secret</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">hmac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">secret</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">hmac</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">hmac</span><span class="p">.</span><span class="nx">digest</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
-</code></pre></div></p>
-<h2 id="sequence-diagram">Sequence Diagram</h2>
-<p><img alt="[Notifications Diagram]" src="/img/notificationsDiagramEn.png" /></p>
-<h2 id="payload">Payload</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;txHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some-tx-hash&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;chainId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42161</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">543</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xyour-address-involved&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your address&#39; description&quot;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;inflictedLaws&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mexico&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The name of the law inflicted&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Description of the law&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nt">&quot;risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;warn&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Source of the law&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="err">...</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="data-structures">Data Structures</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// typescript</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">ILaw</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">risk</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;warn&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;illegal&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nx">source?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
-</code></pre></div>
+<h1 id="mexican-compliance-reports">Mexican Compliance Reports</h1>
+<p>WavyNode helps you automatically comply with Mexico's anti-money laundering regulations (LFPIORPI). Our platform generates the specific reports required by the Financial Intelligence Unit (UIF) for activities involving virtual assets.</p>
+<h2 id="what-to-expect">What to Expect</h2>
+<ul>
+<li>
+<p><strong>Automatic Monthly Reports</strong>: At the beginning of each month, WavyNode automatically generates official XML reports covering the previous month's activity. The process is fully automated, requiring no manual action from you.</p>
+</li>
+<li>
+<p><strong>Threshold-Based Reporting</strong>: Reports are created only for your end-users whose transaction volume during the month meets or exceeds the official threshold set by the authorities (based on the UMA value).</p>
+</li>
+<li>
+<p><strong>Email Notifications</strong>: As soon as the reports for your project are ready, your designated administrators will receive an email notification.</p>
+</li>
+<li>
+<p><strong>Secure Downloads</strong>: You can securely download the generated XML reports directly from your WavyNode dashboard. These files are ready for you to present to the corresponding authorities.</p>
+</li>
+</ul>
+<h2 id="your-responsibilities">Your Responsibilities</h2>
+<p>For the reports to be generated correctly, WavyNode relies on the user data you provide through your integration.</p>
+<p>It is crucial that your <code>GET /users/:userId</code> endpoint is always active and provides accurate, up-to-date information for your users. This data is used to populate the required fields in the official reports, ensuring their validity and compliance.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
